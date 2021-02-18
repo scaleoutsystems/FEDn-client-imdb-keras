@@ -14,26 +14,18 @@ shell script will configure and start a client on a blank Ubuntu 20.04 LTS VM:
 sudo apt-get update
 sudo sudo snap install docker
 
-# Install git-lfs
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install git-lfs
-git lfs install
-
 # clone the nlp_imdb example
 git clone https://github.com/aitmlouk/FEDn-client-imdb-keras.git
 cd FEDn-client-imdb-keras
 
-# Download data from archive
-wget https://archive.org/download/data_20210128/data.zip
-sudo apt install unzip
-unzip data.zip
-sudo rm data.zip
-
-# Install requirements
-sudo apt install python3-pip -y
-pip3 install -r requirements.txt
+# if no available data, download it from archive
+# wget https://archive.org/download/data_20210128/data.zip
+# sudo apt install unzip
+# unzip data.zip
+# sudo rm data.zip
 
 # Make sure you have edited extra-hosts.yaml to provide hostname mappings for combiners
+# Make sure you have edited fedn-network.yaml to provide hostname mappings for reducer
 sudo docker-compose -f docker-compose.10clients.yaml -f extra-hosts.yaml up --build
 ```
 
@@ -62,3 +54,6 @@ The baseline CNN-LSTM is specified in the file 'client/init_model.py'. This scri
 # client/models
 python init_model.py 
 ```
+
+## License
+Apache-2.0 (see LICENSE file for full information).
