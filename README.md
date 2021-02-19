@@ -29,6 +29,14 @@ cd FEDn-client-imdb-keras
 sudo docker-compose -f docker-compose.10clients.yaml -f extra-hosts.yaml up --build
 ```
 
+### Start prediction- global model serving
+We have made it possible to use the trained global model for prediction, to start the UI make sure that the FEDn-network is
+is started and run the flask app (python predict/app.py)
+```bash
+# prediction/
+python app.py
+```
+
 ### Configuring the tests
 We have made it possible to configure a couple of settings to vary the conditions for the training. These configurations are expsosed in the file 'client/settings.yaml': 
 
