@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, json
 from miniorepo import get_global_model, get_global_model_list
 import keras as k
 from models.imdb_model import create_seed_model
-from utils.kerasweights import KerasWeightsHelper
 from io import BytesIO
 import numpy as np
 
@@ -18,7 +17,7 @@ def predict():
         raise Exception("Ops, Could not connect to bucket repo, make sure to run fedn network!")
 
 
-def load_model(self, path="weights.npz"):
+def load_model(path):
 
     a = np.load(path)
     weights = []
@@ -36,8 +35,7 @@ def imdb_predict():
         text_review = request.form.get('input_value', '')
         model = get_global_model(global_model, bucket='fedn-models')
         model = BytesIO(model)
-        helper = KerasWeightsHelper()
-        weights = helper.load_model(model)
+        weights = load_model(model)
 
         model = create_seed_model()
         model.set_weights(weights)
