@@ -2,5 +2,4 @@ numpy
 keras
 tensorflow
 sklearn
-pandas
 flask
