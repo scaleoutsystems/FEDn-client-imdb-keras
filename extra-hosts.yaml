@@ -2,5 +2,5 @@ version: '3.3'
 services:
  client:
   extra_hosts:
-    combiner-ssc: 129.16.123.182
+    combiner-ssc: 13.53.197.49
 
