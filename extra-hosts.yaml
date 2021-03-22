@@ -1,6 +1,6 @@
 version: '3.3'
 services:
- client1:
+ client:
   extra_hosts:
-    combiner-aws-stockholm: 13.53.197.49
+    combiner-ssc: 129.16.123.182
 
