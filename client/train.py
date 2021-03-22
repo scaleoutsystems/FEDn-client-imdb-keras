@@ -23,7 +23,7 @@ def train(model, data, settings):
 
 if __name__ == '__main__':
 
-    from fedn.utils.kerasweights import KerasWeightsHelper
+    from fedn.utils.kerashelper import KerasHelper
     from models.imdb_model import create_seed_model
 
     with open('settings.yaml', 'r') as fh:
@@ -32,7 +32,7 @@ if __name__ == '__main__':
         except yaml.YAMLError as e:
             raise e
 
-    helper = KerasWeightsHelper()
+    helper = KerasHelper()
     weights = helper.load_model(sys.argv[1])
     model = create_seed_model()
     model.set_weights(weights)
