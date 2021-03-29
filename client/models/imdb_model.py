@@ -40,7 +40,3 @@ def create_seed_model():
                   metrics=['accuracy'])
 
     return model
-
-
-
-

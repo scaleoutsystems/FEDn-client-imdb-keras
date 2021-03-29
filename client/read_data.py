@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
 import numpy as np
 import yaml
 
@@ -22,5 +22,6 @@ def read_data(filename):
 
     x_train = data_input[:, 1:-1]
     y_train = data_input[:, -1]
-    _, X, _, y = train_test_split(x_train, y_train, test_size=settings['test_size'])
-    return X, y
+    return x_train, y_train
+    #_, X, _, y = train_test_split(x_train, y_train, test_size=settings['test_size'])
+    #return X, y
