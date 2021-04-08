@@ -1,6 +1,6 @@
 numpy
 keras
-tensorflow
+tensorflow==2.3.2
 sklearn
 flask
 minio
