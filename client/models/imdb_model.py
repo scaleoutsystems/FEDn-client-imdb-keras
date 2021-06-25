@@ -6,7 +6,7 @@ from tensorflow.keras.layers import Conv1D, MaxPooling1D
 
 def create_seed_model():
     """
-    Helper function to generate an initial seed model.
+    Helper function to generate initial seed model.
     Define CNN-LSTM architecture
     :return: model
     """

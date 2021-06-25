@@ -4,3 +4,5 @@ tensorflow
 sklearn
 flask
 minio
+pandas
+grpcio>=1.34.0
