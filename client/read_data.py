@@ -6,8 +6,8 @@ import yaml
 
 def read_data(filename):
     """
-    Helper function to read and preprocess data for training with Keras.
-    :return: model
+    Helper function to read preprocessed data and split it.
+    :return: train and test data
     """
     with open('settings.yaml', 'r') as fh:
         try:
